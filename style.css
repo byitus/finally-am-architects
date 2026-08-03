@@ -916,6 +916,20 @@ body::before {
   cursor: pointer;
 }
 .testi__media:hover .testi__media-play { opacity: 1; }
+.testi__media--initials {
+  display: grid; place-items: center;
+  border: 1px solid var(--gold);
+  background: transparent;
+}
+.testi__media--initials::after { content: none; }
+.testi__initials {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(46px, 5.5vw, 70px);
+  letter-spacing: .04em;
+  line-height: 1;
+  color: var(--gold);
+}
 .testi__quote {
   font-family: var(--serif);
   font-weight: 300;

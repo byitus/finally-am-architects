@@ -586,25 +586,25 @@ const TESTIMONIALS = [
   {
     name: 'Anjali &amp; Rohan Mehta',
     role: 'Vengat Villa, 2024',
-    photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=85',
+    initials: 'AM',
     quote: 'They listened more than they spoke. The house we live in now is the house we always wanted, even when we did not yet have the words for it.',
   },
   {
     name: 'Suresh Krishnamurthy',
     role: 'Director, Aasi Hospital',
-    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=85',
+    initials: 'SK',
     quote: 'Our community got the hospital it deserved. The architects gave us the drawings, the dignity, and the patience. The patients call it the cool building, because it is.',
   },
   {
     name: 'Maya Iyer',
     role: 'Founder, Royal Oak',
-    photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=85',
+    initials: 'MI',
     quote: 'Eighteen months in and the office still does the small thing every day that I asked them to design for: it makes us want to come back tomorrow.',
   },
   {
     name: 'Vikram Sundar',
     role: 'Vellaichamy Residence',
-    photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=85',
+    initials: 'VS',
     quote: 'Three generations have walked these slopes. They built us a house that already feels like it has been here a long time.',
   },
 ];
@@ -617,11 +617,8 @@ function renderTestimonials() {
   const dots = $('#testimonialDots');
   track.innerHTML = TESTIMONIALS.map((t, i) => `
     <article class="testi ${i === 0 ? 'is-active' : ''}" data-i="${i}">
-      <div class="testi__media">
-        <img loading="lazy" src="${t.photo}" alt="${t.name}">
-        <div class="testi__media-play">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </div>
+      <div class="testi__media testi__media--initials" aria-hidden="true">
+        <span class="testi__initials">${t.initials}</span>
       </div>
       <div>
         <p class="testi__quote">${t.quote}</p>
